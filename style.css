@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-light: hsl(233, 100%, 97%);
+  --bg-pink: hsl(312, 91%, 96%);
+  --primary-purple: hsl(232, 17%, 35%);
+  --secondary-purple: hsl(275, 18%, 79%);
+  --bg-grey: hsl(218, 17%, 62%);
+  --title-color: hsl(0, 0%, 100%);
+  --paragraph-color: hsl(274, 84%, 12%);
+  --txt-cards-color: hsl(232, 17%, 35%);
+
+  font-size: 62.5%;
+  --ff-primary: 'Staatliches', sans-serif;
+  --ff-seconday: 'Palanquin', sans-serif;
+
+  --fs-heading: clamp(3rem, 2.5rem + 5vw, 4rem);
+  --fs-paragraph: clamp(1rem, 1.5rem, 2rem);
+  --fs-cards: clamp(1rem, 2rem, 3rem);
+}
+
+.container {
+  max-width: 38.5rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+
+  display: grid;
+  gap: 3.2rem;
+
+  padding-top: 2rem;
+}
+
+header {
+  font-family: var(--ff-primary);
+  text-align: center;
+  padding: 3.2rem 0;
+
+  height: 27.9rem;
+  width: 100vw;
+}
+
+header:before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  background-color: var(--bg-grey);
+  height: 27.9rem;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+
+header h1 {
+  font-size: var(--fs-heading);
+  color: var(--title-color);
+  letter-spacing: 0.5rem;
+  line-height: 3.4rem;
+  font-weight: 400;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--secondary-purple);
+
+  padding: 0.8rem 0;
+}
+
+main {
+  background-color: var(--bg-pink);
+}
+
+main p {
+  font-family: var(--ff-seconday);
+  font-size: var(--fs-paragraph);
+  color: var(--paragraph-color);
+
+  font-weight: 400;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.card {
+  position: relative;
+
+  animation: downtop 800ms backwards;
+}
+
+.card h2 {
+  background-color: var(--bg-pink);
+  width: fit-content;
+  border-radius: 2rem;
+
+  text-transform: uppercase;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-cards);
+  color: var(--txt-cards-color);
+  font-size: var(--fs-paragraph);
+  letter-spacing: 0.2rem;
+  line-height: 3.4rem;
+  font-weight: 400;
+
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+
+  height: 3.5rem;
+  width: 11rem;
+  text-align: center;
+
+  animation: topdown 800ms backwards 400ms;
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
